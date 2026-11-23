@@ -1,0 +1,21 @@
+{
+  "required" : [ "CustomerId", "FoodBillingId" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "CustomerId" : {
+      "title" : "CustomerId",
+      "description" : "CustomerId",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "FoodBillingId" : {
+      "title" : "FoodBillingId",
+      "description" : "FoodBillingId",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

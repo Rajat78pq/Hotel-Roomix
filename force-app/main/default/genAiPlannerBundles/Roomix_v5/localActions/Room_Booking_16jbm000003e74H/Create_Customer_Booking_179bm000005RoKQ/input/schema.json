@@ -1,0 +1,35 @@
+{
+  "required" : [ "CheckInDate", "MobileNumber", "Name", "RoomPreferance" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "CheckInDate" : {
+      "title" : "CheckInDate",
+      "description" : "This is for storing customer Checkin Date",
+      "lightning:type" : "lightning__dateType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "MobileNumber" : {
+      "title" : "MobileNumber",
+      "description" : "This will store customer Mobile Number",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "Name" : {
+      "title" : "Name",
+      "description" : "This variable will store Customer Name.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "RoomPreferance" : {
+      "title" : "RoomPreferance",
+      "description" : "This is for storing Customer Room preferance.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

@@ -1,0 +1,14 @@
+{
+  "required" : [ "customerIds" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "customerIds" : {
+      "title" : "customerIds",
+      "description" : "customerIds",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

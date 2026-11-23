@@ -1,0 +1,21 @@
+{
+  "required" : [ "CustomerId", "RoomServiceRequest" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "CustomerId" : {
+      "title" : "CustomerId",
+      "description" : "",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "RoomServiceRequest" : {
+      "title" : "RoomServiceRequest",
+      "description" : "",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

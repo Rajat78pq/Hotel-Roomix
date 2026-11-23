@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>68.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Validate_to_the_Customer</name>
+        <label>Validate to the Customer</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Invalid Customer</defaultConnectorLabel>
+        <rules>
+            <name>Valid_Customer</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Verify_Customer</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Food_Options</targetReference>
+            </connector>
+            <label>Valid Customer</label>
+        </rules>
+    </decisions>
+    <description>This flow is responsible for get the list of food options.</description>
+    <environments>Default</environments>
+    <interviewLabel>Get Food Option List {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Get Food Option List</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Food_Options</name>
+        <label>Get Food Options</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <object>Food_Option__c</object>
+        <outputReference>FoodList</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Name</queriedFields>
+        <queriedFields>Price__c</queriedFields>
+        <queriedFields>Size__c</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Verify_Customer</name>
+        <label>Verify Customer</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Validate_to_the_Customer</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Customer_ID__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>CustomerId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Checked In</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Customer__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Verify_Customer</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Store CustomerId of given by user.</description>
+        <name>CustomerId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>This Variable willl store list of food.</description>
+        <name>FoodList</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Food_Option__c</objectType>
+    </variables>
+</Flow>

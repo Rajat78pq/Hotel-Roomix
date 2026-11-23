@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BotVersion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>v5</fullName>
+    <articleAnswersGPTEnabled>false</articleAnswersGPTEnabled>
+    <botDialogs>
+        <botSteps>
+            <botMessages>
+                <message>Hi I am Roomix an Ai Hotel service Agent, How i can help you Today.</message>
+                <messageIdentifier>7492890b-77a2-4f37-a195-c0521276a1a9</messageIdentifier>
+            </botMessages>
+            <stepIdentifier>2bc988a5-27a8-4068-9b2e-0d3a879d578d</stepIdentifier>
+            <type>Message</type>
+        </botSteps>
+        <botSteps>
+            <stepIdentifier>6c57536b-9067-416f-8e09-93d80db28b0c</stepIdentifier>
+            <type>Wait</type>
+        </botSteps>
+        <developerName>Welcome</developerName>
+        <isPlaceholderDialog>false</isPlaceholderDialog>
+        <label>Welcome</label>
+        <showInFooterMenu>false</showInFooterMenu>
+    </botDialogs>
+    <botDialogs>
+        <botSteps>
+            <botMessages>
+                <message>Something went wrong. Try again.</message>
+                <messageIdentifier>8a3570a3-4fa1-4d74-9ae3-4c5bcd30ab85</messageIdentifier>
+            </botMessages>
+            <stepIdentifier>931e9331-6f95-4441-af2d-18be6fca465b</stepIdentifier>
+            <type>Message</type>
+        </botSteps>
+        <botSteps>
+            <stepIdentifier>179796be-1120-412e-8cf3-480a7e95afb1</stepIdentifier>
+            <type>Wait</type>
+        </botSteps>
+        <developerName>Rich_Content_Error_Handling</developerName>
+        <isPlaceholderDialog>false</isPlaceholderDialog>
+        <label>Error Handler</label>
+        <showInFooterMenu>false</showInFooterMenu>
+    </botDialogs>
+    <botDialogs>
+        <botSteps>
+            <conversationSystemMessage>
+                <type>Transfer</type>
+            </conversationSystemMessage>
+            <stepIdentifier>77f2e6f9-da8f-480d-ae3d-93c4a7374afe</stepIdentifier>
+            <type>SystemMessage</type>
+        </botSteps>
+        <developerName>Transfer_To_Agent</developerName>
+        <isPlaceholderDialog>false</isPlaceholderDialog>
+        <label>Transfer To Agent</label>
+        <showInFooterMenu>false</showInFooterMenu>
+    </botDialogs>
+    <citationsEnabled>false</citationsEnabled>
+    <conversationDefinitionPlanners>
+        <genAiPlannerName>Roomix_v5</genAiPlannerName>
+    </conversationDefinitionPlanners>
+    <conversationSystemDialogs>
+        <dialog>Rich_Content_Error_Handling</dialog>
+        <type>ErrorHandling</type>
+    </conversationSystemDialogs>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Stores the authentication key that&apos;s used to generate the verification code.</description>
+        <developerName>authenticationKey</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Authentication Key</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>This variable will store what is preferance of room for Customer .</description>
+        <developerName>Room_Preferance</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Room Preferance</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>The agent instructions</description>
+        <developerName>AgentScriptInternal_agent_instructions</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Agent Instructions</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Boolean</dataType>
+        <description>Runtime condition evaluation for if statements</description>
+        <developerName>AgentScriptInternal_condition_1</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Runtime Condition 1</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Date</dataType>
+        <description>This variable will store when the customer will check in into the hotel.</description>
+        <developerName>Check_In_Date</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Check In Date</label>
+        <visibility>External</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Boolean</dataType>
+        <description>Runtime condition evaluation for else-if chain link 2</description>
+        <developerName>AgentScriptInternal_condition_2</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Runtime Condition 2</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Stores the Salesforce Case ID created by an inbound email.</description>
+        <developerName>emailCaseId</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Email Case Id</label>
+        <visibility>External</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Store the value forther uses.</description>
+        <developerName>foodBillId</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>foodBillId</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>This variable may also be referred to as VerifiedCustomerId</description>
+        <developerName>VerifiedCustomerId</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Verified Customer Id</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Track which workflow is currently in progress. values: Room, Food, or empty String for none.</description>
+        <developerName>Active_Flow</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Active Flow</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Boolean</dataType>
+        <description>Stores a boolean value that indicates whether the customer code is verified.</description>
+        <developerName>isVerified</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>isVerified</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>The next topic to be visited</description>
+        <developerName>AgentScriptInternal_next_topic</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Next Topic</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Stores email address of the end user who sent the inbound email.</description>
+        <developerName>endUserEmail</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>End User Email</label>
+        <visibility>External</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>This variable will store Customer Phone Number.</description>
+        <developerName>Phone_Number</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Phone Number</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Stores the Salesforce user ID or contact ID.</description>
+        <developerName>customerId</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Customer Id</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>This variable will store Customer Name.</description>
+        <developerName>Name</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Name</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Stores the Salesforce Contact ID associated with the end user who sent the inbound email.</description>
+        <developerName>endUserContactId</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>End User Contact Id</label>
+        <visibility>External</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Stores the customer ID type, whether it&apos;s a Salesforce user or a contact.</description>
+        <developerName>customerType</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Customer Type</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <copilotPrimaryLanguage>en_US</copilotPrimaryLanguage>
+    <copilotSecondaryLanguages>en_GB</copilotSecondaryLanguages>
+    <entryDialog>Welcome</entryDialog>
+    <intentDisambiguationEnabled>false</intentDisambiguationEnabled>
+    <intentV3Enabled>false</intentV3Enabled>
+    <knowledgeActionEnabled>false</knowledgeActionEnabled>
+    <knowledgeFallbackEnabled>false</knowledgeFallbackEnabled>
+    <smallTalkEnabled>false</smallTalkEnabled>
+    <surfacesEnabled>false</surfacesEnabled>
+    <toneType>Casual</toneType>
+</BotVersion>

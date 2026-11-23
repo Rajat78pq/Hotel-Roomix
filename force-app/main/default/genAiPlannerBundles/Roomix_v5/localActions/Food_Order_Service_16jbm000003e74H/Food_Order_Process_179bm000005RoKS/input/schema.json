@@ -1,0 +1,14 @@
+{
+  "required" : [ "jsonInput" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "jsonInput" : {
+      "title" : "jsonInput",
+      "description" : "The JSON Representation of The food Options user have selected with food option Id and Quantity.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

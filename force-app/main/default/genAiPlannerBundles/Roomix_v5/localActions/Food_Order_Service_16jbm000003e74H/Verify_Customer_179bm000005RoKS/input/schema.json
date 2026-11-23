@@ -1,0 +1,14 @@
+{
+  "required" : [ "CustomerId" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "CustomerId" : {
+      "title" : "CustomerId",
+      "description" : "Store the CustomerId for verify the customer based on provided by customer.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

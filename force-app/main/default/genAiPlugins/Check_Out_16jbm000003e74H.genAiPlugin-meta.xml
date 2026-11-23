@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata">
+    <canEscalate>false</canEscalate>
+    <description>This Agent will responsible for checkout to the customer.</description>
+    <developerName>Check_Out_16jbm000003e74H</developerName>
+    <genAiPluginInstructions>
+        <description>You are an AI Agent.</description>
+        <developerName>instruction0_179bm000005RoKR</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction0_179bm000005RoKR</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>Check Out</masterLabel>
+    <pluginType>Topic</pluginType>
+</GenAiPlugin>
